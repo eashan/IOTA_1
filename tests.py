@@ -67,7 +67,7 @@ class FlaskTestCase(unittest.TestCase):
             data=dict(username="admin", password="admin"),
             follow_redirects=True
         )
-        self.assertIn(b'Hello from the shell', response.data)
+        self.assertIn(b'Die hard', response.data)
 
 
 if __name__ == '__main__':

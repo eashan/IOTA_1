@@ -1,16 +1,21 @@
 # import the Flask class from the flask module
 from flask import Flask, render_template, redirect, \
     url_for, request, session, flash, g
+from flask.ext.sqlalchemy import SQLAlchemy
 from functools import wraps
 import sqlite3
-
 # create the application object
 app = Flask(__name__)
 
 # config
 app.secret_key = 'my precious'
-app.database = 'sampe.db'
+app.database = 'sample.db'
+import os
 
+app.config.from_object(os.environ['APP_SETTINGS'])
+#create the sqlalchemy object
+db = SQLAlchemy(app)
+from models import *
 
 # login required decorator
 def login_required(f):
@@ -32,7 +37,7 @@ def home():
 
     try:
         # return "Hello, World!"  # return a string
-        g.db = connect_db()
+        """g.db = connect_db()
         cur = g.db.execute('select * from posts')
 
         for row in cur.fetchall():
@@ -41,6 +46,11 @@ def home():
             # posts = [dict(title=row[0], description=row[1]) for row in cur.fetchall()]
 
         g.db.close()
+        """
+        query = BlogPost.query.all()
+        for row in query:
+            posts.append(dict(title = row.title, description = row.description))
+
     except sqlite3.OperationalError:
         flash ("You have no db")
     return render_template('index.html', posts=posts)  # render a template
@@ -75,8 +85,8 @@ def logout():
 
 
 # connect to database
-def connect_db():
-    return sqlite3.connect(app.database)
+#def connect_db():
+#    return sqlite3.connect(app.database)
 
 
 # start the server with the 'run()' method
