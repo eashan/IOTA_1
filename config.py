@@ -5,6 +5,13 @@ class BaseConfig(object):
 	SECRET_KEY = "\xe2\x9c\xee\xc4%\x8ffS\x95\xa3\xee\xd4\xf4\xed|S\xccN![u\xa2;\x15"
 	SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URI']
 	#'sqlite:///posts.db'
+	SOCIAL_TWITTER = {
+    'consumer_key': 'twitter consumer key',
+    'consumer_secret': 'twitter consumer secret'}
+
+	SOCIAL_FACEBOOK = {
+    'consumer_key': '1608967339412134',
+    'consumer_secret': '379fe87f981c4d85f72cdb605d157478'}
 
 class DevelopmentConfig(BaseConfig):
 	DEBUG = True

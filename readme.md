@@ -1,3 +1,7 @@
+I am using this template to build my application. This provides a decent setup to build flask applications.(THis isn't currently doing what I intend to , but I will transform this after I am able to manage a social login integration)
+
+As for Social Login, I intend to use the Flask-Social Library to facilitate social login to the app.THis is the [Link](https://github.com/mattupstate/flask-social) has the documentation links and sample code too.
+
 # Introduction to Flask
 
 [Flask](http://flask.pocoo.org/) is a micro web framework powered by Python. It's API is fairly small, making it easy to learn and simple to use. But don't let this fool you, as it's powerful enough to support enterprise-level applications handling large amounts of traffic. You can start small with an app contained entirely in one file, then slowly scale up to multiple files and folders in a well-structured manner as your site becomes more and more complex.

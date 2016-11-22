@@ -4,6 +4,11 @@ from flask import Flask, render_template, redirect, \
 from flask.ext.sqlalchemy import SQLAlchemy
 from functools import wraps
 import sqlite3
+# ... other required imports ...
+from flask.ext.social import Social
+from flask.ext.social.datastore import SQLAlchemyConnectionDatastore
+
+# ... create the app ...
 # create the application object
 app = Flask(__name__)
 
