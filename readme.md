@@ -3,7 +3,7 @@ I am using this template to build my application. This provides a decent setup t
 So as to run the app you need to first set the following environment variables:
 export APP_SETTINGS='config.DevelopmentConfig'
 and Database URI:
-export DATABASE_URI='sqlite:///posts.db'
+export DATABASE_URL='sqlite:///posts.db'
 
 As for Social Login, I intend to use the Flask-Social Library to facilitate social login to the app.[This](https://github.com/mattupstate/flask-social) link has the documentation and sample code for Flask Social Library.
 
