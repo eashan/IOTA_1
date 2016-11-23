@@ -1,4 +1,4 @@
-from app import db
+from app import db,bcrypt
 
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship
@@ -21,16 +21,16 @@ class BlogPost(db.Model):
 class NGO(db.Model):
 	__tablename__ = "ngo"
 
-	id = db.Column(db.Integer, primary_key=True)
+	id = db.Column(db.Integer, primary_key=True,autoincrement=True)
 	name = db.Column(db.String, nullable=False)
 	description = db.Column(db.String, nullable=False)
-
 	password = db.Column(db.String, nullable=False)
 	posts = relationship("BlogPost", backref="author")
 
-	def __init__(self, name, password):
+	def __init__(self, name,description, password):
 		self.name = name
-		self.password = password
+		self.description = description
+		self.password = bcrypt.generate_password_hash(password)
 
 	def __repr__(self):
 		return '<name {}'.format(self.name)

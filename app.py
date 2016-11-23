@@ -2,6 +2,7 @@
 from flask import Flask, render_template, redirect, \
     url_for, request, session, flash, g
 from flask.ext.sqlalchemy import SQLAlchemy
+from flask.ext.bcrypt import Bcrypt
 from functools import wraps
 import sqlite3
 # ... other required imports ...
@@ -11,7 +12,7 @@ from flask.ext.social.datastore import SQLAlchemyConnectionDatastore
 # ... create the app ...
 # create the application object
 app = Flask(__name__)
-
+bcrypt = Bcrypt(app)
 # config
 app.secret_key = 'my precious'
 app.database = 'sample.db'
