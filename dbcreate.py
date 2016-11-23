@@ -9,7 +9,7 @@ db.create_all()
 db.session.add(BlogPost("Good Will Hunting","Awesome movie"))
 db.session.add(BlogPost("Die hard","Awesome movie"))
 db.session.add(BlogPost("Breakfast Club","Awesome movie"))
-
+db.session.add(BlogPost("Postgres","Setup postgress locally"))
 
 
 

@@ -54,7 +54,7 @@ def home():
         """
         query = BlogPost.query.all()
         for row in query:
-            posts.append(dict(title = row.title, description = row.description))
+            posts.append(dict(author = row.author,title = row.title, description = row.description))
 
     except sqlite3.OperationalError:
         flash ("You have no db")
