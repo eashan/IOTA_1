@@ -8,7 +8,9 @@ export DATABASE_URL='sqlite:///posts.db'
 As for Social Login, I intend to use the Flask-Social Library to facilitate social login to the app.[This](https://github.com/mattupstate/flask-social) link has the documentation and sample code for Flask Social Library.
 
 #For postgres Setup use:
-
+First install postgres using :
+sudo apt-get install postgresql postgresql-contrib
+then use the following command to create a user called postgres
 sudo -u postgres psql postgres
 
 and then in the postgres prompt :
@@ -18,6 +20,9 @@ Create database from cli using :
  sudo -u postgres createdb mydb
 
 This creates postgres://postgres:*password*@localhost/mydb
+thus reset the env variable 
+DATABASE_URL='postgres://postgres:*password*@localhost/mydb' 
+
 
 #For Migrations:
 Create a file called manage.py
