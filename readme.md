@@ -27,35 +27,35 @@ DATABASE_URL='postgres://postgres:*password*@localhost/mydb'
 #For Migrations:
 Create a file called manage.py
 add :
-///
-from flask.ext.script import Manager
-from flask.ext.migrate import Migrate, MigrateCommand
-import os
 
-from app import app, db
+//from flask.ext.script import Manager
+//from flask.ext.migrate import Migrate, MigrateCommand
+//import os
 
-app.config.from_object(os.environ['APP_SETTINGS'])
-migrate = Migrate(app, db)
-manager = Manager(app)
+//from app import app, db
 
-manager.add_command('db', MigrateCommand)
+//app.config.from_object(os.environ['APP_SETTINGS'])
+//migrate = Migrate(app, db)
+//manager = Manager(app)
 
-if __name__ == '__main__':
-	manager.run()
+//manager.add_command('db', MigrateCommand)
 
-///
+//if __name__ == '__main__':
+//	manager.run()
+
+
 
 then you can execute:
 python manage.py db init
 python manage.py db upgrade
 
 #Setting Up Bcrypt
-pip install flask-bcrypt
-//in app.py
-import flask.ext.bcrypt as Bcrypt
+//pip install flask-bcrypt
+in app.py
+//import flask.ext.bcrypt as Bcrypt
 
 bcrypt = Bcrypt(app)
-//
+
 
 and convert the simple text password to a hash using the bcrypt.generate_password_hash()
 
