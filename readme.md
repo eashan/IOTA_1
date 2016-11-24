@@ -3,26 +3,32 @@ I am using this template to build my application. This provides a decent setup t
 So as to run the app you need to first set the following environment variables:
 export APP_SETTINGS='config.DevelopmentConfig'
 and Database URI:
+```shell
 export DATABASE_URL='sqlite:///posts.db'
-
+```
 As for Social Login, I intend to use the Flask-Social Library to facilitate social login to the app.[This](https://github.com/mattupstate/flask-social) link has the documentation and sample code for Flask Social Library.
 
 #For postgres Setup use:
 First install postgres using :
+```shell
 sudo apt-get install postgresql postgresql-contrib
+```
 then use the following command to create a user called postgres
+```shell
 sudo -u postgres psql postgres
-
+```
 and then in the postgres prompt :
 use (\password  *password*) cmd to set password
 
 Create database from cli using :
- sudo -u postgres createdb mydb
-
+```shell
+sudo -u postgres createdb mydb
+```
 This creates postgres://postgres:*password*@localhost/mydb
 thus reset the env variable 
-DATABASE_URL='postgres://postgres:*password*@localhost/mydb' 
-
+```shell
+export DATABASE_URL='postgres://postgres:*password*@localhost/mydb' 
+```
 
 #For Migrations:
 Create a file called manage.py
@@ -52,12 +58,13 @@ python manage.py db upgrade
 #Setting Up Bcrypt
 ```shell
 pip install flask-bcrypt
-```
-in app.py
+in app.py add:
+```python
+
 import flask.ext.bcrypt as Bcrypt
 
 bcrypt = Bcrypt(app)
-//
+```
 
 and convert the simple text password to a hash using the bcrypt.generate_password_hash()
 
