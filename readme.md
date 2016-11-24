@@ -1,8 +1,10 @@
 I am using this template to build my application. This provides a decent setup to build flask applications.(THis isn't currently doing what I intend to , but I will transform this after I am able to manage a social login integration)
 
 So as to run the app you need to first set the following environment variables:
+```shell
 export APP_SETTINGS='config.DevelopmentConfig'
-and Database URI:
+```
+and Database URL:
 ```shell
 export DATABASE_URL='sqlite:///posts.db'
 ```
