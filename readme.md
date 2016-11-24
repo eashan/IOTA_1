@@ -58,6 +58,7 @@ python manage.py db upgrade
 #Setting Up Bcrypt
 ```shell
 pip install flask-bcrypt
+```
 in app.py add:
 ```python
 
