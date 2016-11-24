@@ -25,7 +25,7 @@ class NGO(db.Model):
 	id = db.Column(db.Integer, primary_key=True,autoincrement=True)
 	name = db.Column(db.String, nullable=False)
 	description = db.Column(db.String, nullable=False)
-	password = db.Column(db.String, nullable=False)
+	password = db.Column(db.String)
 	posts = relationship("BlogPost", backref="author")
 
 	def __init__(self, name,description, password):
