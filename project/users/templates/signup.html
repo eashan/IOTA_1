@@ -1,18 +1,5 @@
 {% extends "base.html" %}
-{% block login %} 
-                <form class="navbar-form navbar-right" method="post" action="">
-                {{ form.csrf_token }}
-                  <div class="form-group">
-                    {{ form.username() }}
-                  </div>
-                  <div class="form-group">
-                    {{ form.password(placeholder="Password") }}
 
-                  </div>
-				<button class="btn btn-success btn-lg" type="submit">Sign in</button>
-				<a class="btn btn-primary btn-lg"  href ="/signup" >Sign up</a>
-                </form>
-{% endblock %}
 {% block content %}
 
 <div class="jumbotron">
@@ -33,6 +20,16 @@
 			</span>
 			</p>
 			<p>
+			{{ form.description(placeholder="Description") }}
+			<span class="error">
+			{% if form.description.errors %}
+				{% for error in form.description.errors %}
+					{{ error }}
+				{% endfor %}
+			{% endif %}
+			</span>
+			</p>
+			<p>
 			{{ form.password(placeholder="Password") }}
 				<span class="error">
 				{% if form.password.errors %}
@@ -42,10 +39,8 @@
 				{% endif %}
 				</span>
 			</p>
-			<button class="btn btn-success btn-lg" type="submit">Sign in</button>
+			<button class="btn btn-success btn-lg" type="submit">Sign Up</button>
 			</form>
-			<a class="btn btn-primary btn-lg"  href ="/signup" >Sign up</a>
-
 			</center>
 
 

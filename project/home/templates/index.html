@@ -1,10 +1,17 @@
 {% extends "base.html" %}
+
 {% block content %}
 
-<h1>Welcome to Flask!</h1>
-<br>
-<p>Click <a href="/logout">here</a> to logout.</p>
-<br><br>
+<div class="jumbotron">
+      <div class="container">
+        <h1>Welcome to Beyond Giving</h1>
+			<br>
+			<p>Click <a href="/logout">here</a> to logout.</p>
+			<br><br>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+      </div>
+    </div>
+
 <h3>Posts:</h3>
 {% for post in posts %}
   <strong>Author:</strong> {{ post.author.name }} <br>
